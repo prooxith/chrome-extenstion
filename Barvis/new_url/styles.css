@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body{
+	background: #05050f;
+	overflow: hidden;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 600;
+	user-select: none;
+
+}
+.main{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+}
+
+.mainWord{
+	font-size: 130px;
+	margin: 10px;
+}
+
+.bottom{
+	margin-top: 30px;
+	display: flex;
+	gap: 10px;
+}
+
+.pOfSpeechItem{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 10px;
+	padding: 10px;
+	background: #202020;
+}
+
+.type{
+	text-transform: uppercase;
+}
+
+.multiplesItem{
+	padding: 10px 15px;
+	display: flex;
+	flex-direction: column;
+	margin: 5px;
+}
+
+.p{
+	margin: 5px;
+	border: 2px solid white;
+	padding: 10px 15px;
+	line-height: 25px;
+	border-radius: 3px;
+}

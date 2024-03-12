@@ -1,0 +1,65 @@
+{
+  "name": "Balfred",
+  "description": "BALLY BALLY",
+  "version": "1.1",
+  "manifest_version": 3,
+  "icons": { "16": "icons/16.png",
+           "48": "icons/48.png",
+          "128": "icons/128.png" },
+  "permissions": [
+    "storage",
+      "activeTab",
+       "tabs",
+        "webNavigation",
+         "scripting",
+          "history",
+           "alarms"
+         ],
+  "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+  "chrome_url_overrides" : {
+    "newtab": "new_url/index.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [ "sound.mp3"],
+      "matches": [ "http://*/*","https://*/*" ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": "Ctrl+Shift+V",
+      "description": "Toggle POPUP",
+      "global": true
+    }
+  },
+  "content_scripts":[
+    {
+      "matches": ["*://*.discord.com/*"],
+      "css": ["sites/discord.css"]
+    },
+    {
+      "matches": ["*://*.youtube.com/*", "*://*.reddit.com/*"], //BRING LOL
+      "run_at": "document_start",
+      "js": ["sites/blocks.js"]
+    },
+    {
+      "matches":["*://10fastfingers.com/typing-test/*", "*://10fastfingers.com/advanced-typing-test/*"],
+      "js":["sites/10ff.js"]
+    },
+    {
+      "matches":["*://web.whatsapp.com/"],
+      "js":["sites/wa.js"]
+    },
+    {
+      "matches":["<all_urls>"],
+      "js":["sites/porn.js"]
+    }
+  ]
+  
+}
